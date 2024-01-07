@@ -1,0 +1,21 @@
+﻿@model IEnumerable <MVC.Models.EmployeeList>
+
+@using MVC.Models;
+
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<div style="font-family:Arial">
+    <h2>Employee List</h2>
+    <ul>
+        @foreach(EmployeeList employee in @Model)
+        {
+            <li>
+                @Html.ActionLink(employee.Name,"SecondDetails",new { id = employee.EmployeeId })
+            </li>
+        }
+    </ul>
+</div>
+ 
+
